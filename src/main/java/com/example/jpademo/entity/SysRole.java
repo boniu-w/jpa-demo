@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "sys_role")
 public class SysRole {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "snowflakeid")
     @Column(name = "id", nullable = false)
     private Long id;
 

@@ -1,7 +1,9 @@
 package com.example.jpademo;
 
 import com.example.jpademo.dao.SysUserRepository;
+import com.example.jpademo.dao.UserRepository;
 import com.example.jpademo.entity.SysUser;
+import com.example.jpademo.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +15,9 @@ class JpademoApplicationTests {
 
     @Autowired
     SysUserRepository sysUserRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Test
     void contextLoads() {
@@ -48,7 +53,17 @@ class JpademoApplicationTests {
         System.out.println(wg);
 
         List<Long> sysUsers1 = sysUserRepository.selectAllSysUser1();
-        System.out.println("sysUsers1: "+sysUsers1);
+        System.out.println("sysUsers1: " + sysUsers1);
+    }
+
+    @Test
+    public void testInsert() {
+        User user = new User();
+        user.setUserName("www");
+        user.setAge(21);
+
+        User save = userRepository.save(user);
+        System.out.println(save);
     }
 
 }
