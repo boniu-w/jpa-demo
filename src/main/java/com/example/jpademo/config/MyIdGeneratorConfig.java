@@ -10,6 +10,14 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
 
+/************************************************************************
+ * @author: wg
+ * @description: jpa中 id 用雪花算法生成
+ * @params:
+ * @return:
+ * @createTime: 11:11  2022/8/26
+ * @updateTime: 11:11  2022/8/26
+ ************************************************************************/
 public class MyIdGeneratorConfig implements IdentifierGenerator {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 

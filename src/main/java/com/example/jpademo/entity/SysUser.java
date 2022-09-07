@@ -1,5 +1,7 @@
 package com.example.jpademo.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /************************************************************************
@@ -12,8 +14,9 @@ import javax.persistence.*;
 @Entity
 public class SysUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "snowflakeid")
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "myIdGeneratorConfig")
+    @GenericGenerator(name = "myIdGeneratorConfig", strategy="com.example.jpademo.config.MyIdGeneratorConfig")
     private Long id;
 
     private String name;

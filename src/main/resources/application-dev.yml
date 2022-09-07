@@ -17,7 +17,7 @@ spring:
   jpa:
     hibernate:
       # 自动生成数据库表
-      ddl-auto: update
+      # ddl-auto: update
     show-sql: true
     properties:
       hibernate:
